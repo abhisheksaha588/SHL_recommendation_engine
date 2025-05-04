@@ -77,10 +77,9 @@ The system returns the top 10 matches with relevant metadata
 A lightweight Flask-based web app facilitates user interaction with the recommendation system.
 
 ### Core Features:
-
--Search bar to enter hiring requirements.
--Tabulated results of relevant assessments.
--REST API support for backend integration.
+Search bar to enter hiring requirements.
+Tabulated results of relevant assessments.
+REST API support for backend integration.
 ---
 
 ## 6. REST API
