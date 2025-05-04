@@ -82,7 +82,9 @@ Search bar to enter hiring requirements.
 
 Tabulated results of relevant assessments.
 
-REST API support for backend integration.
+REST API support for Banckend integration.
+
+
 ---
 
 ## 6. REST API
