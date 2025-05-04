@@ -77,8 +77,11 @@ The system returns the top 10 matches with relevant metadata
 A lightweight Flask-based web app facilitates user interaction with the recommendation system.
 
 ### Core Features:
+
 Search bar to enter hiring requirements.
+
 Tabulated results of relevant assessments.
+
 REST API support for backend integration.
 ---
 
@@ -110,5 +113,7 @@ REST API support for backend integration.
 ## 8. Design Notes & Future Considerations
 
 -Embedding excluded URLs to minimize token count and improve efficiency.
+
 -Original metadata (like data-entity-id and full links) is preserved and can be reintegrated during result rendering.
+
 -This design supports future enhancements, such as displaying full product pages, without altering the core embedding logic
