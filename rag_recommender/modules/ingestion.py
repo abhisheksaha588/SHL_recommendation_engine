@@ -25,7 +25,7 @@ def convert_row_to_json(row) -> str:
     assessment_json = {
         "data_entity_id": row["data-entity-id"],
         "assessment_name": row["Assessment Name"],
-        "relative_url": row["Relative URL"],
+        # "relative_url": row["Relative URL"],
         "remote_testing": row["Remote Testing"],
         "adaptive_irt": row["Adaptive/IRT"],
         "duration": row["Assessment Length"],  # Add the 'Duration' column if available
