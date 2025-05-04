@@ -67,7 +67,9 @@ A dedicated module (rag_pipeline.py) manages the core Retrieval-Augmented Genera
 Pipeline Overview:
 
 User query is embedded using Gemini.
+
 Similar assessments are retrieved from the FAISS index.
+
 The system returns the top 10 matches with relevant metadata
 
 ---
