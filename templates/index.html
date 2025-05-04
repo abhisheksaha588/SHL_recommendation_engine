@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment Recommender</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input[type="text"] { width: 60%; padding: 10px; }
+        button { padding: 10px 20px; }
+        table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+        th, td { padding: 10px; border: 1px solid #75afa8; text-align: left; }
+        th { background-color: #a4e2e4; }
+    </style>
+</head>
+<body>
+    <h2>Assessment Recommender System</h2>
+
+    <input type="text" id="query" placeholder="Enter your query..." />
+    <button onclick="submitQuery()">Search</button>
+
+    <div id="resultSection">
+        <table id="resultTable" style="display:none;">
+            <thead>
+                <tr><th>#</th><th>Assessment Info</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        function submitQuery() {
+            const query = document.getElementById("query").value;
+
+            fetch("/search", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById("resultTable");
+                const tbody = table.querySelector("tbody");
+                tbody.innerHTML = "";
+                console.log("data",data)    
+
+                if (data.results) {
+                    data.results.forEach((res, index) => {
+                        const row = `<tr><td>${index + 1}</td><td>${res}</td></tr>`;
+                        tbody.innerHTML += row;
+                    });
+                    table.style.display = "table";
+                } else {
+                    tbody.innerHTML = "<tr><td colspan='2'>No results found.</td></tr>";
+                    table.style.display = "table";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while searching.");
+            });
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment Recommender</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input[type="text"] { width: 60%; padding: 10px; }
+        button { padding: 10px 20px; }
+        table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+        th, td { padding: 10px; border: 1px solid #75afa8; text-align: left; }
+        th { background-color: #a4e2e4; }
+    </style>
+</head>
+<body>
+    <h2>Assessment Recommender System</h2>
+
+    <input type="text" id="query" placeholder="Enter your query..." />
+    <button onclick="submitQuery()">Search</button>
+
+    <div id="resultSection">
+        <table id="resultTable" style="display:none;">
+            <thead>
+                <tr><th>#</th><th>Assessment Info</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        function submitQuery() {
+            const query = document.getElementById("query").value;
+
+            fetch("/search", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById("resultTable");
+                const tbody = table.querySelector("tbody");
+                tbody.innerHTML = "";
+
+                if (data.results) {
+                    data.results.forEach((res, index) => {
+                        const row = `<tr><td>${index + 1}</td><td>${res}</td></tr>`;
+                        tbody.innerHTML += row;
+                    });
+                    table.style.display = "table";
+                } else {
+                    tbody.innerHTML = "<tr><td colspan='2'>No results found.</td></tr>";
+                    table.style.display = "table";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while searching.");
+            });
+        }
+    </script>
+</body>
+</html>
